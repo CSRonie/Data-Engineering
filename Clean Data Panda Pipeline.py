@@ -10,6 +10,8 @@ c.execute('DROP TABLE IF EXISTS Customer')
 
 df = pd.read_excel(r"C:\Users\My PC\Downloads\Data Eng\Customer Call List.xlsx")
 
+df.to_sql('RawCustomer', conn, if_exists='replace') 
+
 #Retain 1 row of all duplicates
 df = df.drop_duplicates()
 
